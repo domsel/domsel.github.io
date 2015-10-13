@@ -10,12 +10,26 @@
     
     <h2>Syntax</h2>
     <p>Try changing the code in the editor:</p>
-<div id="editor">div("#id.class", [
+<div id="editor">div('#id.class', [
     img({src: 'http://i.imgur.com/gnY75e2b.jpg', alt: 'An image'}),
     p(".imageText", 'This is text for an image')
 ])</div>
     
     <div id="console"></div>
+    
+    <pre><code class="language-js">// Every tag has the same function:
+tagName({attribute : "value"}, ["content"]);
+
+// It's overloaded to accept only content:
+tagName(["content"]);
+  
+// And to accept a string with '#' and/or '.' for attributes
+tagName("#id.class", ["content"]);
+  
+// Content can be an arry of functions returning strings
+// or a single String
+tagName([tagName("Single String"), tagName("Single String")])
+   </code></pre>
     
     <h2>Usage</h2>
     <p>There are three different ways of rendering DOMsel code</p>
@@ -27,7 +41,7 @@
         frowned upon</a>, but arguably it has the prettier syntax</p>
     
     <pre><code class="language-js">with(domsel) {
-    div("#id.class", [
+    var html = div('#id.class', [
         img({src: 'http://i.imgur.com/gnY75e2b.jpg', alt: 'An image'}),
         p(".imageText", 'This is text for an image')
     ]);
@@ -36,8 +50,8 @@
      
     <h3>2. domsel.render() </h3>
     <p>You can pass a function to domsel's render method</p>
-    <pre><code class="language-js">domsel.render(function () {
-    return div("#id.class", [
+    <pre><code class="language-js">var html = domsel.render(function () {
+    return div('#id.class', [
         img({src: 'http://i.imgur.com/gnY75e2b.jpg', alt: 'An image'}),
         p(".imageText", 'This is text for an image')
     ]);
@@ -45,18 +59,18 @@
 
      
         <h3>3. domsel prefix</h3>
-        <pre><code class="language-js">domsel.div("#id.class", [
+        <pre><code class="language-js">var html = domsel.div('#id.class', [
     domsel.img({src: 'http://i.imgur.com/gnY75e2b.jpg', alt: 'An image'}),
     domsel.p(".imageText", 'This is text for an image')
 ]);</code></pre>
      
      You could also alias domsel to make it more compact</b>
       <pre><code class="language-js">var d = domsel;
-d.div("#id.class", [
+var html = d.div('#id.class', [
     d.img({src: 'http://i.imgur.com/gnY75e2b.jpg', alt: 'An image'}),
     d.p(".imageText", 'This is text for an image')
 ]);</code></pre>
-      
+           
     <script src="js/ace/ace.js"></script>
     <script src="js/ace/theme-monokai.js"></script>
     <script src="js/ace/mode-javascript.js"></script>
