@@ -24,10 +24,10 @@ tagName({attribute : "value"}, ["content"]);
 // It's overloaded to accept only content:
 tagName(["content"]);
   
-// And to accept a string with '#' and/or '.' for attributes
+// And to accept a String with '#' and/or '.' for attributes
 tagName("#id.class", ["content"]);
   
-// Content can be an arry of functions returning strings
+// Content can be an arry of functions returning Strings
 // or a single String
 tagName([tagName("Single String"), tagName("Single String")])
    </code></pre>
