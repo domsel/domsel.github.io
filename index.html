@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html>
-
   <head>
+      <link rel="stylesheet" href="css/main.css">
+      <link rel="stylesheet" href="css/prism.css">
+      <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'> 
   </head>
-
   <body>
-    <h1>Allo.</h1>
+    <h1>DOMsel (in distress)</h1>
+    
+    <h2>Syntax</h2>
+    <p>Try changing the code in the editor:</p>
+<div id="editor">div("#id.class", [
+    img({src: 'http://i.imgur.com/gnY75e2b.jpg', alt: 'An image'}),
+    p(".imageText", 'This is text for an image')
+])</div>
+    
+    <div id="console"></div>
+    
+    <h2>Usage</h2>
+    <p>There are three different ways of rendering DOMsel code</p>
+    
+    
+    <h3>1. with(domsel)</h3>
+    <p>Using with() is 
+    <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/with" target="_blank">
+        frowned upon</a>, but arguably it has the prettier syntax</p>
+    
+    <pre><code class="language-js">with(domsel) {
+    div("#id.class", [
+        img({src: 'http://i.imgur.com/gnY75e2b.jpg', alt: 'An image'}),
+        p(".imageText", 'This is text for an image')
+    ]);
+}</code></pre>
+     
+     
+    <h3>2. domsel.render() </h3>
+    <p>You can pass a function to domsel's render method</p>
+    <pre><code class="language-js">domsel.render(function () {
+    return div("#id.class", [
+        img({src: 'http://i.imgur.com/gnY75e2b.jpg', alt: 'An image'}),
+        p(".imageText", 'This is text for an image')
+    ]);
+ });</code></pre>
+
+     
+        <h3>3. domsel prefix</h3>
+        <pre><code class="language-js">domsel.div("#id.class", [
+    domsel.img({src: 'http://i.imgur.com/gnY75e2b.jpg', alt: 'An image'}),
+    domsel.p(".imageText", 'This is text for an image')
+]);</code></pre>
+     
+     You could also alias domsel to make it more compact</b>
+      <pre><code class="language-js">var d = domsel;
+d.div("#id.class", [
+    d.img({src: 'http://i.imgur.com/gnY75e2b.jpg', alt: 'An image'}),
+    d.p(".imageText", 'This is text for an image')
+]);</code></pre>
+      
+    <script src="js/ace/ace.js"></script>
+    <script src="js/ace/theme-monokai.js"></script>
+    <script src="js/ace/mode-javascript.js"></script>
+    <script src="js/ace/worker-javascript.js"></script>
+    <script src="js/ace/mode-html.js"></script>
+    <script src="js/ace/worker-html.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/html-indent.js"></script>
+    <script src="js/domsel.dev.js.js"></script>
+    <script src="js/example.js"></script>
   </body>
 
 </html>
