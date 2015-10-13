@@ -13,23 +13,23 @@
     <p>Try changing the code in the editor:</p>
 <div id="editor">div('#id.class', [
     img({src: 'http://i.imgur.com/gnY75e2b.jpg', alt: 'An image'}),
-    p(".imageText", 'This is text for an image')
+    p('.imageText', 'This is text for an image')
 ])</div>
     
     <div id="console"></div>
     
     <pre><code class="language-js">// Every tag has the same function:
-tagName({attribute : "value"}, ["content"]);
+tagName({attribute : 'value'}, ['content']);
 
 // It's overloaded to accept only content:
-tagName(["content"]);
+tagName(['content']);
   
 // And to accept a String with '#' and/or '.' for attributes
-tagName("#id.class", ["content"]);
+tagName('#id.class', ['content']);
   
 // Content can be an arry of functions returning Strings
 // or a single String
-tagName([tagName("Single String"), tagName("Single String")])
+tagName([tagName('Single String'), tagName('Single String')])
    </code></pre>
     
     <h2>Usage</h2>
@@ -44,7 +44,7 @@ tagName([tagName("Single String"), tagName("Single String")])
     <pre><code class="language-js">with(domsel) {
     var html = div('#id.class', [
         img({src: 'http://i.imgur.com/gnY75e2b.jpg', alt: 'An image'}),
-        p(".imageText", 'This is text for an image')
+        p('.imageText', 'This is text for an image')
     ]);
 }</code></pre>
      
@@ -54,7 +54,7 @@ tagName([tagName("Single String"), tagName("Single String")])
     <pre><code class="language-js">var html = domsel.render(function () {
     return div('#id.class', [
         img({src: 'http://i.imgur.com/gnY75e2b.jpg', alt: 'An image'}),
-        p(".imageText", 'This is text for an image')
+        p('.imageText', 'This is text for an image')
     ]);
  });</code></pre>
 
@@ -63,14 +63,14 @@ tagName([tagName("Single String"), tagName("Single String")])
         <p>You can also use the domsel object directly for each function call</p>
         <pre><code class="language-js">var html = domsel.div('#id.class', [
     domsel.img({src: 'http://i.imgur.com/gnY75e2b.jpg', alt: 'An image'}),
-    domsel.p(".imageText", 'This is text for an image')
+    domsel.p('.imageText', 'This is text for an image')
 ]);</code></pre>
      
      You could also alias domsel to make it more compact
       <pre><code class="language-js">var d = domsel;
 var html = d.div('#id.class', [
     d.img({src: 'http://i.imgur.com/gnY75e2b.jpg', alt: 'An image'}),
-    d.p(".imageText", 'This is text for an image')
+    d.p('.imageText', 'This is text for an image')
 ]);</code></pre>
            
     <script src="js/ace/ace.js"></script>
