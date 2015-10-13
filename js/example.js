@@ -5,7 +5,6 @@
     editor.getSession().setMode("ace/mode/javascript");
     editor.setShowPrintMargin(false);
     editor.setOptions({maxLines: 15});
-    editor.getSession().setUseWrapMode(true);
     editor.setShowInvisibles(true);
 
     var editorConsole = ace.edit("console");
@@ -13,7 +12,6 @@
     editorConsole.getSession().setMode("ace/mode/html");
     editorConsole.setShowPrintMargin(false);
     editorConsole.setOptions({maxLines: 15});
-    editorConsole.getSession().setUseWrapMode(true);
     editorConsole.setShowInvisibles(true);
     editorConsole.setReadOnly(true);
     
