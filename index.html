@@ -60,12 +60,13 @@ tagName([tagName("Single String"), tagName("Single String")])
 
      
         <h3>3. domsel prefix</h3>
+        <p>You can also use the domsel object directly for each function call</p>
         <pre><code class="language-js">var html = domsel.div('#id.class', [
     domsel.img({src: 'http://i.imgur.com/gnY75e2b.jpg', alt: 'An image'}),
     domsel.p(".imageText", 'This is text for an image')
 ]);</code></pre>
      
-     You could also alias domsel to make it more compact</b>
+     You could alias domsel to make it more compact</b>
       <pre><code class="language-js">var d = domsel;
 var html = d.div('#id.class', [
     d.img({src: 'http://i.imgur.com/gnY75e2b.jpg', alt: 'An image'}),
