@@ -26,7 +26,7 @@
         try {
             with (domsel) {
                 var result = eval(editor.getValue()).toString();
-                if (isIn(result, 'function (o,i){var c;if((c="[object Array]"')) return;
+                if (isIn(result, 'function (a,i){var c;if((c="[object Array]"')) return;
                 result = style_html(result, {
                     'indent_size': 4,
                     'indent_char': ' ',
